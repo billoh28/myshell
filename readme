@@ -1,0 +1,112 @@
+# William O'Hanlon - 17477494
+
+Welcome to the user manual for myshell.py!
+
+This manual is here to help you understand the functionality of the shell and understand how to use it.
+
+The functions provided by this shell are:
+
+NAME:
+-- cd : cd [directory]
+
+DESCRIPTION:
+  Used to change the shell's current working directory i.e. the directory or folder in which you are currently working.
+  - cd dirName :  change the current working directory to dirName if possible, and if not will display a message saying that it could not open said directory.
+  - cd ..      :  change the current working directory to the parent directory of the current working directory i.e. the file that contains the current working directory.
+  - cd         :  change the current working directory to your home directory.
+
+
+NAME:
+-- dir : dir [directory]
+
+DESCRIPTION:
+  Used to display a list of files and subdirectories in a directory to screen.
+  - dir         : display a list of files and subdirectories in the current working directory to screen.
+  - dir h       : display a list of files, subdirectories and hidden files in the current working directory to screen.
+  - dir dirName : display a list of files and subdirectories in dirName to screen if possible, and if not will display a message saying that it could not open said directory.
+
+
+NAME:
+-- pwd
+
+DESCRIPTION:
+ Display the file path to the current working directory.
+
+
+NAME:
+-- clr
+
+DESCRIPTION:
+ Clears the screen of any text and resets the promt to the top left of the shell.
+
+
+NAME:
+-- pause
+
+DESCRIPTION:
+ Pauses the shell. The shell can only be unpaused if the enter key is pressed.
+
+
+NAME:
+-- echo : echo [string]
+
+DESCRIPTION:
+ Print a line of text.
+ - echo str   : print the text str to screen minus any leading or tailing spaces, and any multiple spaces in the test is replaced by a single space.
+ - echo "str" : print the text str to screen, and keep all spaces.
+
+
+NAME:
+-- environ
+
+DESCRIPTION:
+ Print the environment variables used by the system to screen. Environment variables provide a simple way to share configuration settings between multiple applications and processes in Unix.
+
+
+NAME:
+-- myshell : myshell [batchfile]
+
+DESCRIPTION
+ Execute the lines within a given file as if they are commands individually entered into the shell. If a file is not given the shell waits for the user to enter one before proceeding.
+ - myshell           : asks the user to enter the name of a file in order to attempt to execute the commands stored in it.
+ - myshell batchFile : attempts to execute each line in batchFile as if they are commands entered individually by the user.
+
+
+NAME:
+-- help : help [command]
+
+DESCRIPTION:
+ Displays the help file for a given command.
+ - help     : prints the readme file which contains a list of documented commands i.e. the one you're currently in ( help file inception ).
+ - help cmd : prints the help file corresponding to the command cmd, if it exists.
+
+
+NAME:
+-- quit
+
+DESCRIPTION:
+ Exits the shell.
+
+
+OUTPUT REDIRECTION:
+-------------------
+All commands / functions of the shell support output redirection. This is when the output of a command is wrote to a file instead of being displayed on screen. Output redirection is denoted in the form:
+
+cmd > outputFile arg1 arg2
+
+e.g. dir > file
+
+- This will print the contents of the current working directory into file.
+
+
+BACKGROUND PROCESSES:
+---------------------
+All commands can be ran as background processes. This means that the command will run in the background until completion, allowing the user to still use the shell while waiting on the process to finish. This is achieved by appending an ampersand (&) to the end of the command line string.
+e.g. echo one    two  three &
+e.g. python3 test.py&
+
+
+EXECUTING INSTALLED PROGRAMS:
+-----------------------------
+Installed program binaries which have command line properties can be executed from within the shell i.e. python, python3, java, cat, nano, view etc.
+Binary files are the files which contain compiled source code and they can be executed on the computer.
